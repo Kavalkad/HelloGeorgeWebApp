@@ -22,8 +22,8 @@
 4.  Включаем сервис командой:
 	`sudo systemctl enable my-service.service`
 5.  Для проверки работы сервиса используем команды:
-	   для проверки статуса: sudo systemctl status my-service.service
-	   для просмотра логов: sudo journalctl -u my-service.service 
+	   - для проверки статуса: `sudo systemctl status my-service.service`
+	   - для просмотра логов: `sudo journalctl -u my-service.service` 
   
    
    
