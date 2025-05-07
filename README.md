@@ -5,7 +5,7 @@
     У пользовательского сервиса должно быть расширение .service. Команда `sudo` даёт пользователю права супер-пользователя, `nano` – открывает текстовый редактор nano на Ubuntu.
 2. В открывшемся текстовом редакторе пишем: 
 
-   ` [Unit]
+    [Unit]
    - Description= your service description # Описание вашего сервиса
    - After=network.target # Для запуска после установки соединения
     [Service]
@@ -15,7 +15,7 @@
    - Restart=always # Перезапуск сервиса при сбое
    - RestartSec=5 # Задержка при перезапуске в секундах
     [Install]
-   - WantedBy=multi-user.target # Запуск в режиме многопользовательской системы`
+   - WantedBy=multi-user.target # Запуск в режиме многопользовательской системы
   
 3.  Перезагружаем systemd-сервисы командой:
 	`sudo systemctl daemon-reload`
