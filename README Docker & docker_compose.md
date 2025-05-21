@@ -1,7 +1,6 @@
 ## Скачиваем Docker на виртуальную машину на Ubuntu
 
-> [!attention]+ !
-> В основе Ubuntu лежит Linux, поэтому нам необходимо установить Docker Engine, а не Docker desktop. И вообще мы крутые программисты, которые умеют пользоваться командной строкой.
+В основе Ubuntu лежит Linux, поэтому нам необходимо установить Docker Engine, а не Docker desktop. И вообще мы крутые программисты, которые умеют пользоваться командной строкой.
 
 ### 1. Скачивание Docker Engine на Ubuntu
 ```bash
@@ -36,16 +35,8 @@ sudo apt-get update
 #### Устанавливаем последнюю версию Docker Engine
 
 ```
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
-
-> [!info] Опционально
->  Настраиваем docker-daemon на запуск при включении хоста командой: 
-> ```
-> sudo systemtcl enabled docker
-> ```
-> 
-
 ---
 
 ## 2. Создание пользовательского Docker-образа
@@ -65,16 +56,16 @@ WORKDIR /app
 COPY --from=build /app/out .
 ENTRYPOINT ["dotnet", "HelloGeorgeWebApp.Web.dll"]
 ```
-- 1. `FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build` указывает, откуда программа установит Docker-образ
-- 2. `WORKDIR /app` создаст директорию `/app` в контейнере 
-- 3. `COPY *.csproj ./` скопирует все файлы с расширением .csproj в директорию `/app`
-- 4. `RUN dotnet restore` восстанавливает зависимости, указанные в файлах .csproj
-- 5. `COPY . ./` копирует все файлы в директорию `/app`
-- 6. `RUN dotnet publish -c Release -o out` компилирует приложение в режиме Release и публикует результат в директорию `/app/out` 
-- 7. `FROM mcr.microsoft.com/dotnet/sdk:8.0` начинает новый этап сборки, используя тот же Docker-образ (см. первый пункт 1)
-- 8. `WORKDIR /app` устанавливает рабочую директорию `/app`
-- 9. `COPY --from=build /app/out .` копирует все файлы из директории `/app/out` (см. пункт 6) в директорию `/app` нового контейнера
-- 10. `ENTRYPOINT ["dotnet", "YourAppName.dll"]` задаст команду `dotnet YourAppName.dll` для запуска приложения
+- `FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build` указывает, откуда программа установит Docker-образ
+- `WORKDIR /app` создаст директорию `/app` в контейнере 
+- `COPY *.csproj ./` скопирует все файлы с расширением .csproj в директорию `/app`
+- `RUN dotnet restore` восстанавливает зависимости, указанные в файлах .csproj
+- `COPY . ./` копирует все файлы в директорию `/app`
+- `RUN dotnet publish -c Release -o out` компилирует приложение в режиме Release и публикует результат в директорию `/app/out` 
+- `FROM mcr.microsoft.com/dotnet/sdk:8.0` начинает новый этап сборки, используя тот же Docker-образ (см. первый пункт 1)
+- `WORKDIR /app` устанавливает рабочую директорию `/app`
+- `COPY --from=build /app/out .` копирует все файлы из директории `/app/out` (см. пункт 6) в директорию `/app` нового контейнера
+- `ENTRYPOINT ["dotnet", "YourAppName.dll"]` задаст команду `dotnet YourAppName.dll` для запуска приложения
 #### Выполняем команду `Docker build -t title`, в директории с файлом Dockerfile, тем самым построим Docker-образ.
 
 ## 3. Установка и настройка Docker compose
@@ -98,12 +89,12 @@ services:
       - "8080:1000"
 ```
 
-- 1.``version: '3'`` указываем последнюю версию файла docker-compose. Версия `3` поддерживает современные функции и рекомендуется для использования
-- 2. `services:` блок, в котором описываются все контейнеры, которые будут запущены
-- 3. `app:` название сервиса (может быть любым)
-- 4. `image: title` указывает на docker-образ, который будет использован в данном контейнере
-- 5. `restart: always` настройка, согласно которой контейнер будет запускаться всегда, даже после перезагрузки хоста
-- 6. `ports:` блок проброса портов
+- `version: '3'` указываем последнюю версию файла docker-compose. Версия `3` поддерживает современные функции и рекомендуется для использования
+- `services:` блок, в котором описываются все контейнеры, которые будут запущены
+- `app:` название сервиса (может быть любым)
+- `image: title` указывает на docker-образ, который будет использован в данном контейнере
+- `restart: always` настройка, согласно которой контейнер будет запускаться всегда, даже после перезагрузки хоста
+- `ports:` блок проброса портов
 	- пробрасывает порт 8080 хоста на порт 1000 контейнера
  
 
