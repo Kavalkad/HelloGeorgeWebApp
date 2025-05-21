@@ -2,7 +2,7 @@
 
 В основе Ubuntu лежит Linux, поэтому нам необходимо установить Docker Engine, а не Docker desktop. И вообще мы крутые программисты, которые умеют пользоваться командной строкой.
 
-### 1. Скачивание Docker Engine на Ubuntu
+## 1. Скачивание Docker Engine на Ubuntu
 ```bash
 sudo apt-get update 
 sudo apt-get install ca-certificates curl 
