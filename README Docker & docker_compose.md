@@ -66,12 +66,9 @@ ENTRYPOINT ["dotnet", "HelloGeorgeWebApp.Web.dll"]
 - `WORKDIR /app` устанавливает рабочую директорию `/app`
 - `COPY --from=build /app/out .` копирует все файлы из директории `/app/out` (см. пункт 6) в директорию `/app` нового контейнера
 - `ENTRYPOINT ["dotnet", "YourAppName.dll"]` задаст команду `dotnet YourAppName.dll` для запуска приложения
-#### Выполняем команду `Docker build -t title`, в директории с файлом Dockerfile, тем самым построим Docker-образ.
+#### Выполняем команду `docker build -t title`, в директории с файлом Dockerfile, тем самым построим Docker-образ.
 
 ## 3. Установка и настройка Docker compose
-
-> [!attention] !
-> Docker compose необходимо устанавливать отдельно
 
 Установим Docker compose, выполнив следующий код:
 ```bash
