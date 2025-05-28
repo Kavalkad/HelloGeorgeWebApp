@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGeorgeWebApp.Web", "HelloGeorgeWebApp.Web\HelloGeorgeWebApp.Web.csproj", "{B501EEC8-9ECC-4058-8C74-7BA764A98D43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloGeorgeWebApp.Tests", "HelloGeorgeWebApp.Tests\HelloGeorgeWebApp.Tests.csproj", "{19A802D1-5A01-40C2-8B59-754A2590E01E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B501EEC8-9ECC-4058-8C74-7BA764A98D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B501EEC8-9ECC-4058-8C74-7BA764A98D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B501EEC8-9ECC-4058-8C74-7BA764A98D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A802D1-5A01-40C2-8B59-754A2590E01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A802D1-5A01-40C2-8B59-754A2590E01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A802D1-5A01-40C2-8B59-754A2590E01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A802D1-5A01-40C2-8B59-754A2590E01E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
