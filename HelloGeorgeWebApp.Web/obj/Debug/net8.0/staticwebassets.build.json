@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "W4PjP7+LkkKR3FjRQPWHUwB6HKUoPHyqeUK0N9nM/os=",
+  "Source": "HelloGeorgeWebApp.Web",
+  "BasePath": "_content/HelloGeorgeWebApp.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
