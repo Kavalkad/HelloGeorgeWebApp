@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\HelloGeorgeWebApp.Web.props" />
-</Project>
